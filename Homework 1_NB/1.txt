@@ -1,0 +1,16 @@
+package com.softserve.edu;
+
+import java.util.Scanner;
+
+public class AppHome5 {
+public static void main(String[] args) {
+	Scanner sc = new Scanner(System.in);
+	
+	System.out.print("Radius = ");
+	Double Radius = sc.nextDouble();
+	Double pr = 2 * Math.PI * Radius;
+	Double ar = Math.PI * Math.pow(Radius, 2);
+	System.out.println("Perymeter = " + pr);
+	System.out.println("Area = " + ar);	
+}
+}
