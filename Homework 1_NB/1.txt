@@ -8,8 +8,9 @@ public static void main(String[] args) {
 	
 	System.out.print("Radius = ");
 	Double Radius = sc.nextDouble();
-	Double pr = 2 * Math.PI * Radius;
-	Double ar = Math.PI * Math.pow(Radius, 2);
+	Double pr, ar;
+	pr = 2 * Math.PI * Radius;
+	ar = Math.PI * Math.pow(Radius, 2);
 	System.out.println("Perymeter = " + pr);
 	System.out.println("Area = " + ar);	
 }
