@@ -1,0 +1,32 @@
+package oop.softserve;
+
+public class MainEm {
+public static void main(String[] args) {
+	Employee employee1 = new Employee("Nadya", 7, 8);
+	System.out.println(employee1.toString());
+	System.out.println("Salary equals:" + employee1.getSalary());
+	System.out.println("Bonus equals:" + employee1.getBonus());
+	employee1.changeRate(3);
+	System.out.println("Recalculated salary equals: " + employee1.getSalary());
+	
+	System.out.println("***");
+	
+	Employee employee2 = new Employee("Ira", 9, 8);
+	System.out.println(employee2.toString());
+	System.out.println("Salary equals:" + employee2.getSalary());
+	System.out.println("Bonus equals:" + employee2.getBonus());
+	
+	System.out.println("***");
+	
+	Employee employee3 = new Employee("Oksana", 6, 6);
+	System.out.println(employee3.toString());
+	System.out.println("Salary equals:" + employee3.getSalary());
+	System.out.println("Bonus equals:" + employee3.getBonus());
+	
+	System.out.println("***");
+	
+	System.out.println("Total salary of all workers equals: " + Employee.getTotalSum());
+	
+	
+}
+}

@@ -1,0 +1,30 @@
+package oop.softserve;
+
+public class MainPr {
+     public static void main(String[] args) {
+
+    	 Person person1 = new Person("Mark", "Kone");
+    	 person1.setBirthYear(1992);
+    	 person1.output();
+    	 
+    	 Person person2 = new Person("Ann", "Lee");
+    	 person2.output();
+    	 
+    	 Person person3 = new Person();
+    	 person3.setFirstName("Andy");
+    	 person3.setLastName("Kordon");
+    	 person3.setBirthYear(1990);
+    	 person3.output();
+    	 
+    	 Person person4 = new Person("Sofiya", "Lan");
+    	 person4.setBirthYear(1988);
+    	 person4.output();
+    	 
+    	 Person person5 = Person.input();
+    	 person5.changeName("Lev", "Moris");
+    	 person5.output();
+    	 
+    	 
+  
+}
+}
