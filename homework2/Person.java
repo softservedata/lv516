@@ -1,5 +1,6 @@
 package homework2;
 
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Person {
@@ -7,14 +8,20 @@ public class Person {
 	private String firstName;
 	private String lastName;
 	private int birthdYear;
-	private int year = 2020;
+	private int year;
 
 	public Person() {
+		firstName = "";
+		lastName = "";
+		birthdYear = 1900;
+		year = LocalDate.now().getYear();
 	}
 
 	public Person(String firstName, String lastName) {
 		this.firstName = firstName;
 		this.lastName = lastName;
+		birthdYear = 1900;
+		year = LocalDate.now().getYear();
 	}
 
 	public String getFirstName() {
@@ -42,24 +49,36 @@ public class Person {
 	}
 
 	public int getAge() {
-		int age = year - birthdYear;
-		return age;
+		return year - birthdYear;
 	}
 
 	@Override
 	public String toString() {
 		return firstName + " " + lastName + ", was born " + getBirthdYear() + " - " + getAge() + " years.";
 	}
+	
+	public void changeName(String firstname, String lastname) {
+		this.firstName = firstname;
+		this.lastName = lastname;
+	}
+	
+	public void output () {
+		System.out.println(toString());
+	}
 
-	public String input() {
+	public static Person input() { //статична фабрика Static Factory Pattern
 		Scanner sc = new Scanner(System.in);
-		String i = sc.nextLine();
-		return i;
+		System.out.println("Firstname = ");
+		String fn = sc.nextLine();
+		System.out.println("Lastname = ");
+		String ln = sc.nextLine();
+		System.out.println("birthdYear = ");
+		int by = sc.nextInt();
+		Person person = new Person (fn, ln);
+		person.setBirthdYear(by);
+		return person;
 	}
 
-	public void changeName(String name1) {
-		System.out.println(name1);
-	}
 
 }
 
@@ -69,7 +88,7 @@ public class Person {
 ! Class Person should consist of
 
 ! three private fields: firstName, lastName and birthYear (the birthday year) 
-! properties for access to these fields
+! properties for access to these fields - гетери і сетери
 ! default constructor and constructor with 2 parameters (first and last names)
 
 methods:
