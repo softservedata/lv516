@@ -71,12 +71,10 @@ class Student extends Employee {
 		// emp.name = "Ivan";
 		name = "Ivan";
 	}
-	
+
 	@Override
 	public String toString() {
-		return "Student [firstName=" + firstName
-				+ ", lastName=" + lastName
-				+ ", name=" + name + "]";
+		return "Student [firstName=" + firstName + ", lastName=" + lastName + ", name=" + name + "]";
 	}
 
 	public static int getCount() {
@@ -144,10 +142,14 @@ public class Appl {
 		// h.setMessage("abc");
 		// h.print();
 		*/
-		//Student s1 = new Student();
+		// Student s1 = new Student();
 		Student s2 = new Student("ivan", "ivanov");
-		//Student s3 = new Student();
+		// Student s3 = new Student();
 		System.out.println("Count = " + Student.getCount());
 		System.out.println(s2);
+		//
+		byte b = 0;
+		b = (byte)(b + 5);
+		//
 	}
 }
