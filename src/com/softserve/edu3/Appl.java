@@ -1,5 +1,6 @@
 package com.softserve.edu3;
 
+import com.softserve.edu.Calc;
 import com.softserve.edu31.Employee;
 
 class Person {
@@ -86,6 +87,7 @@ public class Appl {
 	private int i = 123;
 	private static int j = 456;
 	private static int k;
+	private Calc c;
 
 //	public Appl(int i) {
 //	}
