@@ -6,7 +6,5 @@ public class task1  {
         read.output();
         read.max();
         read.min();
-
-
     }
 }
