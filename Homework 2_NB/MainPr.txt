@@ -8,6 +8,7 @@ public class MainPr {
     	 person1.output();
     	 
     	 Person person2 = new Person("Ann", "Lee");
+         person2.setBirthYear(1985);
     	 person2.output();
     	 
     	 Person person3 = new Person();
