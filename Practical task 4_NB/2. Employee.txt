@@ -1,0 +1,120 @@
+package array.softserve;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+class Employee {
+	private String name;
+	private int numberDep;
+	private int salary;
+	
+	int[] arr = new int[5];
+	
+	public Employee(String name, int numberDep, int salary) {
+		this.name = name;
+		this.numberDep = numberDep;
+		this.salary = salary;
+	}
+
+	public Employee(String name, int salary) {
+		this.name = name;
+		numberDep = 0;
+		this.salary = salary;
+	}
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getNumberDep() {
+		return numberDep;
+	}
+
+	public void setNumberDep(int numberDep) {
+		this.numberDep = numberDep;
+	}
+
+	public int getSalary() {
+		return salary;
+	}
+
+	public void setSalary(int salary) {
+		this.salary = salary;
+	}
+
+	@Override
+	public String toString() {
+		return "Employee [name=" + name + ", salary=" + salary + "]";
+	}
+	
+	public void inputDepNumb() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Please enter department number of this worker:");
+		numberDep = sc.nextInt();
+	}
+	
+	public void sortDesc(int[]arr) {
+		boolean isBreake = false;
+		int temp;
+		
+		for (int i = 0; (!isBreake) && (i < arr.length - 1); i++) {
+			isBreake = true;
+			for (int j = 0; j < arr.length - i - 1; j++) {
+				if (arr[j] < arr[j + 1]) {
+					temp = arr[j];
+					arr[j] = arr[j + 1];
+					arr[j + 1] = temp;
+					isBreake = false;
+				}
+			}
+		}
+			System.out.println("Sorted array in descending order = " + Arrays.toString(arr));
+
+		}
+	}
+
+
+
+public class Practical_task_2 {
+public static void main(String[] args) {
+	Employee employee1 = new Employee("Katya", 25000);
+	System.out.println(employee1.toString());
+	employee1.inputDepNumb();
+	
+	Employee employee2 = new Employee("Igor", 20000);
+	System.out.println(employee2.toString());
+	employee2.inputDepNumb();
+	
+	Employee employee3 = new Employee("Lev", 30000);
+	System.out.println(employee3.toString());
+	employee3.inputDepNumb();
+	
+	Employee employee4 = new Employee("Dima", 35000);
+	System.out.println(employee4.toString());
+	employee4.inputDepNumb();
+	
+	Employee employee5 = new Employee("Ira", 18000);
+	System.out.println(employee5.toString());
+	employee5.inputDepNumb();
+	
+	int[] arr = {employee1.getNumberDep(), employee2.getNumberDep(), employee3.getNumberDep(), employee4.getNumberDep(), employee5.getNumberDep() };
+	System.out.println("Original array = " + Arrays.toString(arr));
+	
+	employee1.sortDesc(arr);
+	
+}
+}
+
+/*
+5. Arrays and Loops
+5.2 Create a class Employee with fields name, department number, salary. Create five objects of class Employee. Display
+all employees of a certain department (enter department number in the console);
+arrange workers by the field salary in descending order.
+*/
+
+
+

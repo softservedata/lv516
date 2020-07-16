@@ -1,0 +1,86 @@
+package array.softserve;
+
+import java.util.Scanner;
+
+class Values {
+
+	int[] arr = new int[10];
+	int i = 0;
+	int sum = 0;
+	int amountNeg =0;
+	int amountPoz = 0;
+	
+
+	public void inputNumbers() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Please enter 10 integers numbers");
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = sc.nextInt();
+		}
+		sc.close();
+	}
+
+	public void getMax() {
+		int max = arr[0];
+		while (i < arr.length) {
+			if (arr[i] > max) {
+				max = arr[i];
+			}
+			i++;
+		}
+		System.out.println("Maximum of these entered numberes is: " + max + ";");
+	}
+
+	public void getSumPozitiv() {
+		for (i = 0; i < arr.length; i++) {
+			if (arr[i] > 0) {
+				sum = sum + arr[i];
+			}
+		}
+		System.out.println("Sum of positive numbers in the array equals: " + sum + ";");
+	}
+	
+	public void getAmountNegativ() {
+		for(i=0; i<arr.length; i++) {
+			if(arr[i]<0) {
+				amountNeg++;
+			} else {
+				amountPoz++;
+			}
+		}
+		System.out.println("Amount of negative numbers in the array equals: " + amountNeg + ";");
+	}
+	
+	public void getCompareNegPoz() {
+		if(amountNeg>amountPoz) {
+			System.out.println("Negetive numbers are more in array;");
+		} else {
+			System.out.println("Positive numbers are more in array;");
+		}
+	}
+	
+}
+
+public class Practical_task_1 {
+	public static void main(String[] args) {
+
+		Values values = new Values();
+		values.inputNumbers();
+		values.getMax();
+		values.getSumPozitiv();
+		values.getAmountNegativ();
+		values.getCompareNegPoz();
+
+	}
+}
+
+
+
+/*
+5. Arrays and Loops
+Create an array of ten integers. Display 
+the biggest of these numbers;
+the sum of positive numbers in the array;
+the amount of negative numbers in the array.
+       What values there are more: negative or positive?
+*/
