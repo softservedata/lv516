@@ -1,4 +1,7 @@
+package HW1;
+
 import java.util.Scanner;
+
 public class Task3 {
     public static void main (String arg[])
     {
@@ -22,7 +25,5 @@ public class Task3 {
         System.out.println("third call cost: " + count3);
         count = count1 + count2 + count3;
         System.out.println("Total: " + count + "$");
-
-
     }
 }
