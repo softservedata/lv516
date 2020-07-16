@@ -52,6 +52,50 @@ public class Continents {
 			break;
 
 		}
+		
+		String [] arrayAsia = {"China", "Nepal", "Pakistan", "Bangladesh"};
+		String [] arrayAfrica = {"Libya", "Mali", "Niger", "Tunisia"};
+		String [] arrayAustralia = {"Australia", "Indonesia"};
+		String [] arrayNAmerica = {"Canada", "USA" };
+		String [] arraySAmerica = {"Argentina", "Bolivia", "Colombia", "Peru" };
+		String [] arrayEurope = {"Ukraine", "Poland", "Italy", "England" };
+		
+		
+		System.out.println("Enter the name of the country");
+		String country2 = sc.nextLine();
+		
+		for (int i = 0; i < arrayAsia.length; i++) {
+            if (country2.equalsIgnoreCase(arrayAsia[i])) {
+                System.out.println(Conts.ASIA);
+            }
+            
+        }
+		for (int i = 0; i < arrayAfrica.length; i++) {
+            if (country2.equalsIgnoreCase(arrayAfrica[i])) {
+                System.out.println(Conts.AFRICA);
+            }
+        }
+		for (int i = 0; i < arrayAustralia.length; i++) {
+            if (country2.equalsIgnoreCase(arrayAustralia[i])) {
+                System.out.println(Conts.AUSTRALIA);
+            }
+        }
+		for (int i = 0; i < arrayNAmerica.length; i++) {
+            if (country2.equalsIgnoreCase(arrayNAmerica[i])) {
+                System.out.println(Conts.NORTH_AMERICA);
+            }
+        }
+		for (int i = 0; i < arraySAmerica.length; i++) {
+            if (country2.equalsIgnoreCase(arraySAmerica[i])) {
+                System.out.println(Conts.SOUTH_AMERICA);
+            }
+        }
+		for (int i = 0; i < arrayEurope.length; i++) {
+            if (country2.equalsIgnoreCase(arrayEurope[i])) {
+                System.out.println(Conts.EUROPE);
+            } 
+        } 
+		//System.out.println("Enter the name of the country");???????
 		sc.close();
 	}
 }
