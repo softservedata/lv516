@@ -1,0 +1,46 @@
+package array.softserve;
+
+import java.util.Scanner;
+
+class MonthDay {
+
+	int month;
+	int[] monthDays = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+
+
+	public void inputMonth() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Please enter some month number: /1-12");
+		month = sc.nextInt();
+		sc.close();
+	}
+
+		public void outputDays() {
+		if (month <= 12 && month > 0) {
+			System.out.println("Month " + month + " has " + monthDays[month - 1] + " days.");
+		} else {
+			System.out.println("Sorry, you entered invalid data. Please, try again!");
+		}
+	}
+}
+
+public class Homework_1 {
+
+	public static void main(String[] args) {
+
+		MonthDay days = new MonthDay();
+		days.inputMonth();
+		days.outputDays();
+	}
+}
+
+
+
+
+
+
+
+/*
+5. Arrays and loops
+5.1. Ask user to enter the number of month. Read the value and write the amount of days in this month (create array with amount days of each month).
+*/

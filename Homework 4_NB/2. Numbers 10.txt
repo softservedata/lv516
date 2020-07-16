@@ -1,0 +1,62 @@
+package array.softserve;
+
+import java.util.Scanner;
+
+class Numbers {
+
+	int sum = 0;
+	int product = 1;
+	int n = 0;
+	int[] arr = new int[10];
+	
+	public void inputNumbers() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Please enter 10 integer numbers:");
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = sc.nextInt();
+		}
+		sc.close();
+	}
+
+	public void calcSumOrProd() {
+// sum-product
+		boolean isRunning = true;
+		for (int i = 0; i < 5; i++) {
+			if (arr[i] < 0) {
+				isRunning = false;
+			}
+			if (isRunning) {
+				sum = sum + arr[i];
+				n++;
+			}
+		}
+		if (n == 5) {
+			System.out.println("Sum of first 5 positiv elements is:" + sum);
+		}
+
+// or last 5 elements:
+		else {
+			for (int i = arr.length - 1; i >= 5; i--) {
+				product = product * arr[i];
+			}
+			System.out.println("Product of last 5 elements is:" + product);
+
+		}
+	}
+
+}
+
+public class Homework_2 {
+	public static void main(String[] args) {
+
+		Numbers numbers = new Numbers();
+		numbers.inputNumbers();
+		numbers.calcSumOrProd();
+	}
+}
+
+
+
+/* 5. Array and loops
+5.2 Enter 10 integer numbers. Calculate the sum of first 5 elements if they are positive or product of last 5 element in the other case.
+*/
