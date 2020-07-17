@@ -1,0 +1,48 @@
+package condition.softserve;
+
+import java.util.Scanner;
+
+enum HTTPerror {
+	BAD_REQUEST(400), UNAUTHORIZED_UNAUTHORIZED(401), FORBIDDEN_FORBIDDEN(403), NOT_FOUND(404), METHOD_ALLOWED(405),
+	NOT_ACCEPTABLE(406), PROXY_REQUIRED(407), REQUEST_TIMEOUT(408), CONFLICT_CONFLICT(409), GONE_GONE(410),
+	LENGTH_REQUIRED(411), PRECONDITION_FAILED(412), PAYLOAD_LARGE(413), URI_LONG(414), UNSUPPORTED_TYPE(415),
+	RANGE_SATISFIABLE(416), EXPECTATION_FAILED(417), I_AM_TEAPOT(418), UNPROCESSABLE_ENTITY(422), TOO_EARLY(425),
+	UPGRADE_REQUIRED(426), PRECONDITION_REQUIRED(428), TOO_REQUESTS(429), REQUEST_LARGE(431), UNAVAILABLE_REASONS(451);
+
+	private int error;
+
+	HTTPerror(int error) {
+		this.error = error;
+	}
+
+	public int getHTTPValue() {
+		return this.error;
+	}
+
+	
+	  public static HTTPerror codeOf (int code) { 
+	  for(HTTPerror name : HTTPerror.values()) { 
+		  if(name.error == code) 
+			  return name;
+	  } 
+	  return null; 
+	  }
+	 
+
+}
+
+public class Homework_1_3 {
+public static void main(String[] args) {
+	
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Please enter HTTP client's error:");
+	int number = sc.nextInt();
+	sc.close();
+	HTTPerror errornumber = HTTPerror.codeOf(number);
+	System.out.println("Name of this error is : " + errornumber);
+	
+	
+	
+}
+
+}

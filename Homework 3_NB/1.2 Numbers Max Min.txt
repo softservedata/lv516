@@ -1,0 +1,87 @@
+package condition.softserve;
+
+import java.util.Scanner;
+
+class MaximumMinimum {
+	private int number1;
+	private int number2;
+	private int number3;
+
+	public MaximumMinimum(int number1, int number2, int number3) {
+		this.number1 = number1;
+		this.number2 = number2;
+		this.number3 = number3;
+	}
+
+	public MaximumMinimum() {
+		number1 = 0;
+		number2 = 0;
+		number3 = 0;
+	}
+
+	public int getNumber1() {
+		return number1;
+	}
+
+	public void setNumber1(int number1) {
+		this.number1 = number1;
+	}
+
+	public int getNumber2() {
+		return number2;
+	}
+
+	public void setNumber2(int number2) {
+		this.number2 = number2;
+	}
+
+	public int getNumber3() {
+		return number3;
+	}
+
+	public void setNumber3(int number3) {
+		this.number3 = number3;
+	}
+
+	public void input() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Please enter first number");
+		number1 = sc.nextInt();
+		System.out.println("Please enter second number");
+		number2 = sc.nextInt();
+		System.out.println("Please enter third number");
+		number3 = sc.nextInt();
+		sc.close();
+	}
+
+	public void checkMaxMin() {
+		if (number1 > number2 && number1 > number3) {
+			System.out.println("Number " + number1 + " is biggest then both other : " + number2 + " and " + number3);
+		} else if (number2 > number1 && number2 > number3) {
+			System.out.println("Number " + number2 + " is biggest then both other : " + number1 + " and " + number3);
+		} else if (number3 > number1 && number3 > number2) {
+			System.out.println("Number " + number3 + " is biggest then both other : " + number1 + " and " + number2);
+		} else {
+			System.out.println("Please enter correct number");
+		}
+	}
+}
+
+public class Homework_1_2 {
+	public static void main(String[] args) {
+		System.out.println("You should enter three integer numbers:");
+
+		MaximumMinimum maxmin = new MaximumMinimum();
+		maxmin.input();
+		maxmin.checkMaxMin();
+	}
+}
+
+
+
+
+
+/*
+4. Condition statement
+read 3 integer numbers and write max and min of them;
+*/ 

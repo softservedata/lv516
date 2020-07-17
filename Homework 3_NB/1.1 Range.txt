@@ -1,0 +1,98 @@
+package condition.softserve;
+
+import java.util.Scanner;
+
+class Range {
+	
+	private float number1;
+	private float number2;
+	private float number3;
+
+	int min = -5;
+	int max = 5;
+	
+	public Range(float number1, float number2, float number3) {
+		this.number1 = number1;
+		this.number2 = number2;
+		this.number3 = number3;
+	}
+
+	public Range() {
+		number1 = 0;
+		number2 = 0;
+		number3 = 0;
+	}
+
+	public float getNumber1() {
+		return number1;
+	}
+
+	public void setNumber1(float number1) {
+		this.number1 = number1;
+	}
+
+	public float getNumber2() {
+		return number2;
+	}
+
+	public void setNumber2(float number2) {
+		this.number2 = number2;
+	}
+
+	public float getNumber3() {
+		return number3;
+	}
+
+	public void setNumber3(float number3) {
+		this.number3 = number3;
+	}
+
+	public void input() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Please enter first float number");
+		number1 = sc.nextFloat();
+		System.out.println("Please enter second float number");
+		number2 = sc.nextFloat();
+		System.out.println("Please enter third float number");
+		number3 = sc.nextFloat();
+		sc.close();
+	}
+
+	public void checkRange() {
+		if (number1 <= max && number1 >= min) {
+			System.out.println("First number " + number1 + " is in range;");
+		} else {
+			System.out.println("First number " + number1 + " is out of range;");
+		}
+		if (number2 <= max && number2 >= min) {
+			System.out.println("Second number " + number2 + " is in range;");
+		} else {
+			System.out.println("Second number " + number2 + " is out of range;");
+		}
+		if (number3 <= max && number3 >= min) {
+			System.out.println("Third number " + number3 + " is in range.");
+		} else {
+			System.out.println("Third number " + number3 + " is out of range.");
+		}
+	}
+
+}
+
+public class Homework_1_1 {
+	public static void main(String[] args) {
+
+		System.out.println("You should enter three float numbers:");
+		Range range = new Range();
+		range.input();
+		range.checkRange();
+	}
+
+}
+
+
+
+
+/*
+4.Condition stateament
+read 3 float numbers and check: are they all belong to the range [-5,5];
+*/

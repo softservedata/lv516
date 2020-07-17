@@ -1,0 +1,113 @@
+package condition.softserve;
+
+class Dog {
+
+	enum Breed {
+		BEABULL, CHIHUAHUA, DOBERDOR, LOWCHEN
+	}
+
+	private String name;
+	private Breed breed;
+	private int age;
+
+	public Dog(String name, Breed breed, int age) {
+		this.name = name;
+		this.breed = breed;
+		this.age = age;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Breed getBreed() {
+		return breed;
+	}
+
+	public void setBreed(Breed breed) {
+		this.breed = breed;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Dog other = (Dog) obj;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "Dog [name=" + name + ", breed=" + breed + ", age=" + age + "]";
+	}
+
+
+	
+}
+
+public class Homework_2 {
+	public static void main(String[] args) {
+
+		Dog dog1 = new Dog("Kira", Dog.Breed.BEABULL, 2);
+		Dog dog2 = new Dog("Jekki", Dog.Breed.CHIHUAHUA, 5);
+		Dog dog3 = new Dog("Kira", Dog.Breed.LOWCHEN, 3);
+
+		System.out.println("Our dogs: " + dog1.toString() + ";" + dog2.toString() + ";" + dog3.toString());
+		
+		if (dog1.equals(dog2)) {
+			System.out.println(dog1.getBreed() + " and " + dog2.getBreed() + " have the same name;");
+		} else if (dog2.equals(dog3)) {
+			System.out.println(dog2.getBreed() + " and " + dog3.getBreed() + " have the same name;");
+		} else if (dog1.equals(dog3)) {
+			System.out.println(dog1.getBreed() + " and " + dog3.getBreed() + " have the same name;");
+		}
+
+		if (dog1.getAge() > dog2.getAge() && dog1.getAge() > dog3.getAge()) {
+			System.out.println(dog1.getBreed() + " " + dog1.getName() + " is the oldest dog.");
+		} else if (dog2.getAge() > dog1.getAge() && dog2.getAge() > dog3.getAge()) {
+			System.out.println(dog2.getBreed() + " " + dog2.getName() + " is the oldest dog.");
+		} else if (dog2.getAge() > dog1.getAge() && dog2.getAge() > dog3.getAge()) {
+			System.out.println(dog2.getBreed() + " " + dog2.getName() + " is the oldest dog.");
+		}
+
+	}
+}
+
+
+/*
+4. Condition statement
+4.2.Сreate class Dog with fields name, breed, age. 
+Declare enum for field breed. 
+Create 3 instances of type Dog. 
+Check if there is no two dogs with the same name. 
+Display the name and the kind of the oldest dog.
+*/
