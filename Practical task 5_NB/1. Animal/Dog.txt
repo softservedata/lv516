@@ -1,0 +1,21 @@
+package oop2.softserve;
+
+public class Dog implements Animal {
+   
+	private String data;
+	
+	public Dog(String data) {
+		this.data = data;
+	}
+	
+    @Override
+	public void voice() {
+	   System.out.println(this.data + " says bark, woof, ruff, bow wow");
+    }
+   
+    @Override
+    public void feed() {
+	System.out.println("\tPlease feed me carrots, dairy products, white rice, fish, cucumbers, meat");  
+    }
+   
+}

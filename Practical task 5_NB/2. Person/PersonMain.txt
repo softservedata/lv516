@@ -1,0 +1,29 @@
+package oop2.softserve;
+
+public class MainPerson {
+public static void main(String[] args) {
+	
+	Person[] person = new Person[6];
+	person[0] = new Student();
+	person[1] = new Student();
+	person[2] = new Cleaners();
+	person[3] = new Cleaners();
+	person[4] = new Teachers();
+	person[5] = new Teachers();
+	
+	person[0].setName("Nelya");
+	person[1].setName("Nadya");
+	person[2].setName("Katya");
+	person[3].setName("Marria");
+	person[4].setName("Inna");
+	person[5].setName("Taras");
+	
+	for(Person p : person) {
+		 p.print();
+		 if(p instanceof Staff) {
+			 System.out.println("My salary equals: " + ((Staff)p).salary());
+		 }
+		}
+	}
+	
+}

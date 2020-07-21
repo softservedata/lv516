@@ -1,0 +1,17 @@
+package oop2.softserve;
+
+public class Cleaners extends Staff {
+
+	public final String TYPE_PERSON = "Cleaner";
+
+	@Override
+	public void print() {
+		System.out.println("I am a " + TYPE_PERSON + " and my name is " + getName() + ";");
+	}
+
+	@Override
+	public int salary() {
+		return 3000;
+	}
+
+}

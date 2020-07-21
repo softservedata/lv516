@@ -1,0 +1,18 @@
+package oop2.softserve;
+
+public class Teachers extends Staff {
+
+	public final String TYPE_PERSON = "Teacher";
+
+	
+	@Override
+	public void print() {
+		System.out.println("I am a " + TYPE_PERSON + " and my name is " + getName() + ";");
+	}
+	
+	@Override
+    public int salary() {
+    	return 15000;	
+    }
+	
+}

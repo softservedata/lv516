@@ -1,0 +1,21 @@
+package oop2.softserve;
+
+public class Cat implements Animal {
+
+	private String data;
+	
+	public Cat(String data) {
+		this.data=data;
+	}
+	
+        @Override
+	public void voice() {
+	System.out.println(this.data + " meow");	   
+	   }
+	
+        @Override
+	public void feed() {
+		System.out.println("\tPlease feed me vegetables, whole grains, cggs, cheese, meat, fish, avocados");   
+	   }
+	
+}
