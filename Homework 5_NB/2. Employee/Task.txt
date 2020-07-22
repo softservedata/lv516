@@ -10,3 +10,5 @@ salary = hourly rate * number of hours worked
 For employees with a fixed payment the formula is: the average monthly 	salary = fixed monthly payment
 Create an array of employees and add the employees with different form of payment.
 Arrange the entire sequence of workers descending the average monthly wage. Output the employee ID, name, and the average monthly wage for all elements of the list.
+
+///
