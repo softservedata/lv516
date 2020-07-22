@@ -1,0 +1,40 @@
+package oop2.softserve;
+
+public class ContractEmployee extends Employee implements Accounting {
+
+	private int fixSalary;
+	private String federalTaxIdmember;
+
+	public ContractEmployee(String employeeld, String name, int fixSalary, String federalTaxIdmember) {
+		super(employeeld, name);
+		this.fixSalary = fixSalary;
+		this.federalTaxIdmember = federalTaxIdmember;
+	}
+	
+	public int getFixSalary() {
+		return fixSalary;
+	}
+
+	public void setFixSalary(int fixSalary) {
+		this.fixSalary = fixSalary;
+	}
+
+	public String getFederalTaxIdmember() {
+		return federalTaxIdmember;
+	}
+
+	public void setFederalTaxIdmember(String federalTaxIdmember) {
+		this.federalTaxIdmember = federalTaxIdmember;
+	}
+
+	public int calculatePay() {
+		return fixSalary;
+	}
+
+	@Override
+	public String toString() {
+		return "Employee " + getName() + " with employee lD: " + getEmployeeld() + ", receives avarage monthly salary " + calculatePay();
+	}
+
+	
+}

@@ -1,0 +1,16 @@
+package oop2.softserve;
+
+public class Eagle extends FlyingBird {
+	
+	public Eagle(String feathers, int layEggs) {
+		super(feathers, layEggs);
+	}
+	
+	@Override
+	public void fly() {
+		super.fly();
+		System.out.println("Average migratory flight/soaring speed is 50 kilometer/hour; normal flight speed going from perch to perch is much less than this.");
+	}
+	
+	
+}

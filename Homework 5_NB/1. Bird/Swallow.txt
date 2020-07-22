@@ -1,0 +1,14 @@
+package oop2.softserve;
+
+public class Swallow extends FlyingBird{
+	
+	public Swallow(String feathers, int layEggs) {
+		super(feathers, layEggs);
+	}
+	
+	@Override
+	public void fly() {
+		super.fly();
+		System.out.println("Swallows are excellent flyers, and use these skills to feed and attract mates.");
+	}
+}

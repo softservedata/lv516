@@ -1,0 +1,14 @@
+package oop2.softserve;
+
+public class Chicken extends NonFlyingBird {
+	
+	public Chicken(String feathers, int layEggs) {
+		super(feathers, layEggs);
+	}
+	
+	@Override
+	public void fly() {
+		super.fly();
+		System.out.println("Domestic chickens are not capable of long distance flight, although lighter chickens are generally capable of flying for short distances.");
+	}
+}

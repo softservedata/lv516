@@ -1,0 +1,50 @@
+package oop2.softserve;
+
+public class SalariedEmployee extends Employee implements Accounting {
+
+	private int rate;
+	private int hoursWorked;
+	private String socialSecurityNumber;
+
+	public SalariedEmployee(String employeeld, String name, int rate, int hoursWorked, String socialSecurityNumber) {
+		super(employeeld, name);
+		this.rate = rate;
+		this.hoursWorked = hoursWorked;
+		this.socialSecurityNumber = socialSecurityNumber;
+	}
+
+	public int getRate() {
+		return rate;
+	}
+
+	public void setRate(int rate) {
+		this.rate = rate;
+	}
+
+	public int getHoursWorked() {
+		return hoursWorked;
+	}
+
+	public void setHoursWorked(int hoursWorked) {
+		this.hoursWorked = hoursWorked;
+	}
+
+	public String getSocialSecurityNumber() {
+		return socialSecurityNumber;
+	}
+
+	public void setSocialSecurityNumber(String socialSecurityNumber) {
+		this.socialSecurityNumber = socialSecurityNumber;
+	}
+
+	public int calculatePay() {
+		return rate * hoursWorked;
+	}
+
+	@Override
+	public String toString() {
+		return "Employee " + getName() + " with employee lD: " + getEmployeeld() + ", receives avarage monthly salary " + calculatePay();
+	}
+	
+	
+}

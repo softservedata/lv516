@@ -1,0 +1,6 @@
+package oop2.softserve;
+
+public interface Accounting {
+
+	public int calculatePay(); 
+}

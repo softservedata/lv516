@@ -1,0 +1,33 @@
+package oop2.softserve;
+
+public class MainEmployee {
+public static void main(String[] args) {
+
+	
+	Employee[] arr = new Employee[5];
+	arr[0] = new SalariedEmployee("One", "Tanya", 70, 170, "Twenty");
+	arr[1] = new SalariedEmployee("Two", "Oksana", 80, 180, "Twenty-one");
+	arr[2] = new SalariedEmployee("Three", "Nina", 60, 190, "Twenty-two");
+	arr[3] = new ContractEmployee("Four", "Petro", 6000, "Twenty-three");
+	arr[4] = new ContractEmployee("Five", "Kostya", 8000, "Twenty-four");
+	
+
+		Employee tmp;
+		for (int i = 0; i < arr.length - 1; i++) {
+			for (int j = i + 1; j < arr.length; j++) {
+				if (((Accounting)arr[i]).calculatePay() < ((Accounting)arr[j]).calculatePay()) {
+					tmp = arr[i];
+					arr[i] = arr[j];
+					arr[j] = tmp;
+				}
+			}
+		}
+		for (int i = 0; i < arr.length; i++) {
+			System.out.println(arr[i]);
+		}
+	}
+	
+}
+
+
+

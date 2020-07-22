@@ -1,0 +1,15 @@
+package oop2.softserve;
+
+public class Penguin extends NonFlyingBird {
+
+	public Penguin(String feathers, int layEggs) {
+		super(feathers, layEggs);
+	}
+	
+	@Override
+	public void fly() {
+		super.fly();
+		System.out.println("Penguin is an accomplished swimmer, having flippers instead of wings.");
+	}
+	
+}
