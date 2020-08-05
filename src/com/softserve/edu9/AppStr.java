@@ -35,7 +35,7 @@ public class AppStr {
         System.out.println(str);
         str = ""; // null
         System.out.println("str.isEmpty() = " + str.isEmpty());
-        */
+        //
         String a = "a"; // What will be the results?
         String A = "A";
         String b = "a";
@@ -44,6 +44,43 @@ public class AppStr {
         System.out.println("a.equalsIgnoreCase(A) " + a.equalsIgnoreCase(A));
         System.out.println("a.compareTo(A) " + a.compareTo(A));
         System.out.println("a.compareToIgnoreCase(A) " + a.compareToIgnoreCase(A));
-
+        //
+        //
+        String a0 = "Java"; // equals new String("Java");
+        String a1 = "Java"; // set reference
+        String a2 = new String("Java"); // create new object
+        //
+        System.out.println("(a0 == a1) =  " + (a0 == a1));
+        System.out.println("(a0 == a2) =  " + (a0 == a2));
+        //
+        System.out.println("a0.equals(a1) =  " + a0.equals(a1));
+        System.out.println("a0.equals(a2) =  " + a0.equals(a2));
+        //
+        System.out.println("a0.compareTo(a1) =  " + a0.compareTo(a1));
+        System.out.println("a0.compareTo(a2) =  " + a0.compareTo(a2));
+        //
+        System.out.println("a0.hashCode() =  " + a0.hashCode());
+        System.out.println("a1.hashCode() =  " + a1.hashCode());
+        System.out.println("a2.hashCode() =  " + a2.hashCode());
+        //
+        final double PI = 3.1415926;
+        String format = "%S is =%6.2f\n";
+        System.out.println("const PI = " + PI);
+        String s = String.format(format, "pi", PI);
+        System.out.println(s);
+        System.out.printf(format, "pi", PI);
+        //
+        */
+        String s1 = new String("Hello");
+        String s2 = " And Goodbye";
+        String str = s1 + s2;
+        // str = s1.concat(s2);
+        System.out.println("str = " + str);
+        //
+        StringBuilder sb = new StringBuilder(s1);
+        sb.append(s2);
+        // str = sb.toString();
+        System.out.println(" sb = " + sb);
+        System.out.println(" Reverse sb = " + sb.reverse());
     }
 }
