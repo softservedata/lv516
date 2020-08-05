@@ -1,0 +1,95 @@
+package string.softserve;
+
+import java.util.Scanner;
+
+class NameSurname {
+	
+	String x;
+	
+	public void input() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Please enter surname, name and patronymic:");
+		x = sc.nextLine();	
+	}
+	
+	public void getSurnameInitials() {
+		String[] arr = x.split(" ");
+		System.out.println(arr[0] + " " + arr[1].substring(0, 1) + "." + arr[2].substring(0, 1));
+	}
+	
+	public void getName() {
+		String[] arr = x.split(" ");
+	System.out.println(arr[1]);	
+	}
+	
+	public void getNameMNameLName() {
+		String[] arr = x.split(" ");
+	System.out.println(arr[1] + " " + arr[2] + " " + arr[0]);	
+	}
+	
+}
+
+public class Practical_work_2_2 {
+public static void main(String[] args) {
+	
+	NameSurname name = new NameSurname();
+	name.input();
+	name.getSurnameInitials();
+	name.getName();
+	name.getNameMNameLName();
+	
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+Enter surname, name and patronymic on the console as a variable of type String. Output on the console:
+surnames and initials
+name
+name, middle name and last name
+
+
+Second variant:
+
+package string.softserve;
+
+class Name {
+	
+	public void getSurnameInitials(String str) {
+		System.out.println(str.substring(0, 7) + " " + str.substring(8, 9) + "." + str.substring(17, 18));
+	}
+
+	public void getName(String str) {
+		System.out.println(str.substring(8, 16));
+	}
+	
+	public void getNameMnLn(String str) {
+		System.out.println(str.substring(8, 16) + " " + str.substring(17, 25)  + " " + str.substring(0, 7));
+	}
+}
+
+public class Practical_work_2 {
+public static void main(String[] args) {
+
+	String str = "Branets Nataliia Ihorivna";
+	
+	Name name = new Name();
+	name.getSurnameInitials(str);
+	name.getName(str);
+	name.getNameMnLn(str);
+	
+}
+}
+
+

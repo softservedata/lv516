@@ -1,0 +1,36 @@
+package string.softserve;
+
+class IT {
+
+	public boolean getTrue1(String str1, String str2) {
+		return str1.contains(str2);
+	}
+
+	public boolean getTrue2(String str1, String str2) {
+		return str1.toLowerCase().contains(str2.toLowerCase());
+
+	}
+
+}
+
+public class Homework_1 {
+	public static void main(String[] args) {
+
+		String str1 = new String("IT Academy");
+		String str2 = "IT";
+
+		IT it = new IT();
+
+		System.out.println(it.getTrue1(str1, str2));
+		System.out.println(it.getTrue2(str1, str2));
+
+	}
+}
+
+
+
+
+
+/*
+Enter the two variables of type String. 
+Determine whether the first variable substring second. For example, if you typed «IT» and «IT Academy» you must receive true.
