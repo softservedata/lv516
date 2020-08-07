@@ -1,0 +1,129 @@
+package collections.softserve;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Iterator;
+import java.util.List;
+
+class Students implements Comparable<Students> {
+
+	public static class ByName implements Comparator<Students> {
+		@Override
+		public int compare(Students st1, Students st2) {
+			return st1.getName().compareTo(st2.getName());
+		}
+	}
+
+	public static class ByCourse implements Comparator<Students> {
+		@Override
+		public int compare(Students st1, Students st2) {
+			return st1.getCourse() - st2.getCourse();
+		}
+	}
+
+	private String name;
+	private int course;
+
+	public Students(String name, int course) {
+		this.name = name;
+		this.course = course;
+	}
+
+	public Students() {
+		name = "";
+		course = 0;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getCourse() {
+		return course;
+	}
+
+	public void setCourse(int course) {
+		this.course = course;
+	}
+
+	@Override
+	public String toString() {
+		return "Student [name=" + name + ", course=" + course + "]";
+	}
+
+	@Override
+	public int compareTo(Students students) {
+		return name.compareTo(students.getName());
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + course;
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Students other = (Students) obj;
+		if (course != other.course)
+			return false;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		return true;
+	}
+
+	public void printStudents(List<Students> list, Integer course) {
+		System.out.println("Our students:");
+		System.out.println(list);
+		System.out.println("\nOn course " + course + " such students study:");
+		Iterator<Students> iterator = list.iterator();
+		while (iterator.hasNext()) {
+			Students current = iterator.next();
+			if (current.getCourse() == course) {
+				System.out.println(current);
+			}
+		}
+
+	}
+}
+
+public class Homework_3 {
+	public static void main(String[] args) {
+
+		List<Students> list = new ArrayList<>();
+		list.add(new Students("Sasha", 2));
+		list.add(new Students("Oksana", 4));
+		list.add(new Students("Katya", 3));
+		list.add(new Students("Roman", 2));
+		list.add(new Students("Oleg", 1));
+
+		Students students = new Students();
+		students.printStudents(list, 2);
+
+		Collections.sort(list, new Students.ByName());
+		System.out.println("\nSorted list by name:");
+		System.out.println(list);
+
+		Collections.sort(list, new Students.ByCourse());
+		System.out.println("\nSorted list by course:");
+		System.out.println(list);
+
+	}
+}

@@ -1,0 +1,108 @@
+package collections.softserve;
+
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+
+class Person {
+	
+	private String lastName;
+	private String firstName;
+	
+
+	public Person(String lastName, String firstName) {
+		this.lastName = lastName;
+		this.firstName = firstName;
+	}
+
+	public Person() {
+		lastName = "";
+		firstName = "";
+	}
+	
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public void print(Map<String, String> map) {
+		System.out.println("Person database:");
+		for(Map.Entry<String, String> entry : map.entrySet()) {
+			System.out.println("key = " + entry.getKey() + "; value = " + entry.getValue());
+			//System.out.println(map);
+		}
+	}
+	
+	
+	public void getAmountSameFName(Map<String, String> map) {
+		Set<String> valueSet = new HashSet<>(map.values());
+		for (String obj : valueSet) {
+			int count = 0;
+			for (Map.Entry<String, String> entry : map.entrySet()) {
+				if (entry.getValue().equals(obj)) {
+					count++;
+				}
+			}
+			if (count > 1) {
+				System.out.println("There are " + count + " people with name " + obj);
+			}
+		}
+		
+	}		
+	
+	public void removeFName(Map<String, String> map, String firstName) {
+		Iterator<String> iterator = map.keySet().iterator();
+		while(iterator.hasNext()) {
+			String key = iterator.next();
+			if(map.get(key).equals(firstName)) {
+				iterator.remove();
+			}
+		}
+		System.out.println(firstName + " was deleted from the map.");
+		System.out.println("New map: " + map + ". Now its size is " + map.size());
+	}
+	
+	
+}
+
+
+public class Homework_2 {
+	public static void main(String[] args) {
+
+		Map<String, String> personMap = new HashMap<>();
+		personMap.put("Sivan", "Georg");
+		personMap.put("Lobas", "Orest");
+		personMap.put("Egri", "Ann");
+		personMap.put("Shen", "Esben");
+		personMap.put("Ell", "Inna");
+		personMap.put("Liban", "Andy");
+		personMap.put("Dee", "Esben");
+		personMap.put("Nielson", "Orest");
+		personMap.put("Kuz", "Ann");
+		personMap.put("San", "Orest");
+
+	
+		Person person = new Person();
+		person.print(personMap);
+		System.out.println("----------------");
+		person.getAmountSameFName(personMap);
+		System.out.println("----------------");
+		person.removeFName(personMap, "Esben");
+		
+		
+	}
+}
+

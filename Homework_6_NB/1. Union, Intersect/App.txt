@@ -1,0 +1,76 @@
+package collections.softserve;
+
+
+import java.util.HashSet;
+import java.util.Set;
+import java.util.TreeSet;
+
+class Fruits implements Comparable <Fruits> {
+	
+	private String name;
+
+	
+	public Fruits(String name) {
+		this.name = name;
+	}
+
+	public Fruits() {
+		name = "";
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+
+	@Override
+	public String toString() {
+		return name;
+	}
+
+	public void union(Set<Fruits> set1, Set<Fruits> set2) {
+		Set<Fruits> tmp = new TreeSet<>(set1);
+		tmp.addAll(set2);
+		System.out.println("Union set1 + set2: " + tmp);
+	}
+
+	public void intersect(Set<Fruits> set1, Set<Fruits> set2) {
+		Set<Fruits> tmp = new HashSet<>(set1);
+		tmp.retainAll(set2);
+		System.out.println("Intersection set1, set2: " + tmp);
+	}
+	
+	
+	@Override
+	public int compareTo(Fruits fruits) {
+		return name.compareTo(fruits.getName());
+
+}
+}
+
+public class Homework_1_2 {
+	public static void main(String[] args) {
+
+		Set<Fruits> basket1 = new TreeSet<>();
+		basket1.add(new Fruits("Apple"));
+		basket1.add(new Fruits("Strawberry"));
+		basket1.add(new Fruits("Lemon"));
+		System.out.println("Basket_1 = " + basket1);
+
+		Set<Fruits> basket2 = new TreeSet<>();
+		basket2.add(new Fruits("Strawberry"));
+		basket2.add(new Fruits("Orange"));
+		System.out.println("Basket_2 = " + basket2);
+		 
+		Fruits fruits = new Fruits();
+		fruits.union(basket1, basket2);
+		fruits.intersect(basket1, basket2);
+		
+
+	}
+
+}
