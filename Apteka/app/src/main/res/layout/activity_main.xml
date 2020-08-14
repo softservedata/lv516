@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/iv_doctors"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:onClick="onClick"
+        app:layout_constraintBottom_toTopOf="@id/iv_tablets"
+        app:layout_constraintEnd_toStartOf="@id/iv_pharmacies"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_doctor"
+        tools:ignore="VectorDrawableCompat" />
+
+    <ImageView
+        android:id="@+id/iv_pharmacies"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:onClick="onClick"
+        app:layout_constraintBottom_toTopOf="@id/iv_others"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iv_doctors"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_pharmacy"
+        tools:ignore="VectorDrawableCompat" />
+
+    <TextView
+        android:id="@+id/tv_doctors"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Мій список лікарів"
+        app:layout_constraintEnd_toEndOf="@+id/iv_doctors"
+        app:layout_constraintStart_toStartOf="@+id/iv_doctors"
+        app:layout_constraintTop_toBottomOf="@+id/iv_doctors" />
+
+    <TextView
+        android:id="@+id/tv_pharmacies"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Мій список аптек"
+        app:layout_constraintEnd_toEndOf="@+id/iv_pharmacies"
+        app:layout_constraintStart_toStartOf="@+id/iv_pharmacies"
+        app:layout_constraintTop_toBottomOf="@id/iv_pharmacies" />
+
+    <ImageView
+        android:id="@+id/iv_tablets"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:onClick="onClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/iv_others"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_doctors"
+        app:srcCompat="@drawable/ic_tablets"
+        tools:ignore="VectorDrawableCompat" />
+
+    <ImageView
+        android:id="@+id/iv_others"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:onClick="onClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iv_tablets"
+        app:layout_constraintTop_toBottomOf="@+id/iv_pharmacies"
+        app:srcCompat="@drawable/ic_people"
+        tools:ignore="VectorDrawableCompat"/>
+
+    <TextView
+        android:id="@+id/tv_tablets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Список ліків"
+        app:layout_constraintEnd_toEndOf="@+id/iv_tablets"
+        app:layout_constraintStart_toStartOf="@+id/iv_tablets"
+        app:layout_constraintTop_toBottomOf="@+id/iv_tablets" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Інше"
+        app:layout_constraintEnd_toEndOf="@+id/iv_others"
+        app:layout_constraintStart_toStartOf="@+id/iv_others"
+        app:layout_constraintTop_toBottomOf="@+id/iv_others" />
+</androidx.constraintlayout.widget.ConstraintLayout>
