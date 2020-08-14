@@ -1,0 +1,99 @@
+package error.softserve;
+
+class Plant {
+
+	public enum Color {
+		WHITE, RED, BLUE
+	};
+
+	public enum Type {
+		DAIZY, ROZE, СORNFLOWER, TULIP, LILY
+	};
+
+	private int size;
+	private Color color;
+	private Type type;
+
+	public Plant(String type, String color, int size) throws ColorException, TypeException{
+	      Color c = colorStrToEnum(color);
+	      Type t = typeStrToEnum(type);
+	      this.size = size;
+	      this.type = t;
+	      this.color = c;
+	   }
+
+	private Color colorStrToEnum(String color) throws ColorException{
+	      switch(color.toLowerCase()){
+	         case "blue" : return Color.BLUE; 
+	         case "red" : return Color.RED; 
+	         case "white" : return Color.WHITE; 
+	         default : throw new ColorException("Input only color blue, red or white");
+	      }
+	   }
+
+	private Type typeStrToEnum(String type) throws TypeException{
+	      switch(type.toLowerCase()){
+	         case "daizy" : return Type.DAIZY; 
+	         case "rose" : return Type.ROZE; 
+	         case "cornflower" : return Type.СORNFLOWER;
+	         case "tulip" : return Type.TULIP;
+	         case "lily" : return Type.LILY;
+	         default : throw new TypeException("Input only type daizy, roze, cornflower, tulip or lily");
+	      }
+	   }
+	
+
+	public int getSize() {
+		return size;
+	}
+
+	public void setSize(int size) {
+		this.size = size;
+	}
+
+	public Color getColor() {
+		return color;
+	}
+
+	public void setColor(Color color) {
+		this.color = color;
+	}
+
+	public Type getType() {
+		return type;
+	}
+
+	public void setType(Type type) {
+		this.type = type;
+	}
+
+	@Override
+	public String toString() {
+		return "Plant [size=" + size + ", color=" + color.toString().toLowerCase() + ", type=" + type.toString().toLowerCase() + "]";
+	}
+
+}
+
+
+public class Practical_task_2 {
+	public static void main(String[] args) {
+
+		Plant [] arr = new Plant[5];
+		
+		try {     
+			arr[0] = new Plant("rose", "red", 5);
+			arr[1] = new Plant("cornflower", "blue", 11);
+			arr[2] = new Plant("daizy", "white", 15);
+			arr[3] = new Plant("tulip", "red", 13);
+			arr[4] = new Plant("lil", "white", 9); //MISTAKE IN TYPE
+	   } catch (ColorException | TypeException e) {
+	      System.err.println(e.getMessage() + "\n");
+	      //e.printStackTrace();
+	   }
+		
+		for(Plant current : arr) {
+			System.out.println(current);
+		}
+	}
+
+	}

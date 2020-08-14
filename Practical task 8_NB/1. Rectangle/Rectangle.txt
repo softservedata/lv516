@@ -1,0 +1,47 @@
+package error.softserve;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+class Rectangle {
+
+	public int squareRectangle(int a, int b) throws MyException_ {
+		if (a < 0 || b < 0) {
+			throw new MyException_("Negetiv numbers are not allowed to be entered!");
+		} else {
+			return a * b;
+		}
+
+	}
+}
+
+public class Practical_task_1 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		Rectangle rectangle = new Rectangle();
+
+		try {
+			System.out.print("Please enter length, a = ");
+			int a = sc.nextInt();
+			System.out.print("Please enter width, b = ");
+			int b = sc.nextInt();
+			System.out.println("Area of rectangle is " + rectangle.squareRectangle(a, b));
+		} catch (InputMismatchException e) {
+			System.out.println("InputMismatchException");
+			System.out.println("Message = " + e.getMessage());
+		} catch (MyException_ e) {
+			System.out.println("MyException_");
+			System.out.println("Message = " + e.getMessage());
+		} finally {
+			sc.close();
+		}
+	}
+}
+
+
+/*
+Create a method for calculating the area of a rectangle 
+	int squareRectangle (int a, int b), 
+which should throw an exception if the user enters negative value. Input values a and b from console. Check the squareRectangle method in the method main. Check to input nonnumeric value.
+*/
+
