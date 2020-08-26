@@ -13,10 +13,11 @@ public class Calc {
             sum = sum + number % 10;
             number = Math.abs(number / 10); // Defect.
         }
-//        try {
-//            number = 1 / number;
-//        } catch (Exception e) {
-//        }
+        try {
+            number = 1 / number;
+        } catch (Exception e) {
+            System.out.println("try done");
+        }
         return sum;
     }
 

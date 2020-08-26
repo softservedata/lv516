@@ -15,7 +15,7 @@ public class App {
         }
         Calc calc = new Calc(num);
         System.out.print("Sum Digits=" + calc.sumDigits());
-        //Calc calc2 = new Calc(num);
-        System.out.print("\nCount Digits=" + calc.countNonZeroDigits());
+        Calc calc2 = new Calc(num);
+        System.out.print("\nCount Digits=" + calc2.countNonZeroDigits());
     }
 }
