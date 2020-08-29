@@ -1,0 +1,3 @@
+Number of lines in file1.txt. = 10
+The longest line in file1.txt.: manner, career can be defined as the sum total of decisions that direct your educational,
+Liza, 26.01.2002
