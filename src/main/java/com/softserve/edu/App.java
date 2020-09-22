@@ -61,7 +61,7 @@ public class App {
             System.out.println();
         }
         //System.out.println("before close");
-        logger.error("before close");
+        logger.info("before close");
         if (rs != null) {
             rs.close();
         }
